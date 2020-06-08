@@ -82,7 +82,7 @@ function capitalizeAllWords(string) {``
 //////////////////////////////////////////////////////////////////////
 
 function welcomeMessage(object) {
-    
+    return "Welcome " + object.name.slice(0, 1).toUpperCase() + object.name.slice(1) + "!";// return string with value capitlized at key name in object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -90,7 +90,8 @@ function welcomeMessage(object) {
 //////////////////////////////////////////////////////////////////////
 
 function profileInfo(object) {
-
+    return object.name.slice(0, 1).toUpperCase() + object.name.slice(1) + " is a " + object.species.slice(0, 1).toUpperCase() + object.species.slice(1);
+    //return a string with value at key name catitlized added string  is a  plus value at the key species capitlized 
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -98,7 +99,20 @@ function profileInfo(object) {
 //////////////////////////////////////////////////////////////////////
 
 function maybeNoises(object) {
-
+    if(!object.noises){// checking if object has a key named noises
+        return "there are no noises";// return there are no noises
+    }
+    if(!object.noises.length){// checking if there are values at key noises in the object
+        return "there are no noises";// return there are no noises
+    }// default
+    return object.noises.reduce((acc, val) => {// return the value at key noises in object using reduce
+        if(object.noises[object.noises.length -1] === val){// checking for last value in the array
+            acc += val;// add val to acc
+            return acc;// return acc
+        }
+        acc += val + " ";// add val to acc and add a space also
+        return acc;// return acc
+    }, "");// set acc to empty string
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -106,7 +120,7 @@ function maybeNoises(object) {
 //////////////////////////////////////////////////////////////////////
 
 function hasWord(string, word) {
-
+    return string.includes(word);// checking if string has word in it with method .includes which returns true or false
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -114,7 +128,8 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 
 function addFriend (name, object) {
-
+    object.friends.push(name);// pushing name in the object at key friends value
+    return object;// return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -122,7 +137,10 @@ function addFriend (name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function isFriend(name, object) {
-
+    if(!object.friends){// checking if object has a key named friends
+        return false;// return false
+    }// default
+    return object.friends.includes(name);// return the value at key friends in the object with method .includes which returns true or false
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -130,7 +148,19 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
-
+    let friends;// create a varible name friends
+    let final = [];// create a varible name final and set it to an empty array
+    array.map(val => {// using map method to loop over the array
+        if(val.name === name){// check if val at key name is equal to name value
+            friends = val.friends;// set friends to array at friend key in val
+        }
+    });
+    array.map(val => {// using map method to loop over the array
+        if(val.name !== name && !friends.includes(val.name)) {// checking if value at key name is not equal to name and if name is in friends array
+            final.push(val.name);// push value at key name in final
+        }
+    });
+    return final;// return final
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -138,7 +168,8 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 
 function updateObject(object, key, value) {
-
+    object[key] = value;// assign value at key in object
+    return object;// return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -146,7 +177,10 @@ function updateObject(object, key, value) {
 //////////////////////////////////////////////////////////////////////
 
 function removeProperties(object, array) {
-
+    array.map(val => {// using array . map to loop over array
+        delete object[val];// delete every key that shares name with val in object
+    });
+    return object;// return object
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -154,7 +188,12 @@ function removeProperties(object, array) {
 //////////////////////////////////////////////////////////////////////
 
 function dedup(array) {
-
+    return array.reduce((acc, val) => {// return array with the reduce method
+        if(!acc.includes(val)){// checking if acc has val in it
+            acc.push(val);// push val in acc
+        }
+        return acc;// return acc
+    }, []);// set acc to a empty array
 }
 
 //////////////////////////////////////////////////////////////////////

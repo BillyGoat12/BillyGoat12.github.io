@@ -3,147 +3,126 @@
 ********************************************************************************
 *                             OPERATORS                                        *
 ********************************************************************************      
-* 
-* 0. OPERATORS - does an operation on a single or multiple values and produces 
-* a result from left to right.
-* 1. An Operator manipulates vales and are used to do mathematical and logical
-* operations.
-* 2. There are different kinds of operators : Assignment operators , Arithmetic 
-* operators, Comparison operators, Logical operators ,Unary operators and
-* Ternary operator
+*
+* 0. OPERATORS - It is a symbol used as in act of an operation.
+* They are various amounts of operators: assignment, logical, arithmetic, comparison, unary, and ternary. 
+* Each of these operators are designed to do a specific action! 
 */
  
-// 1. Assignmet Operators //
- 
-/* 
-* Performs an operations to a variable to the left based on the value of 
-* the right operant 
+// Assignment operators
+// This operator assigns a value to a variable
+// = , += , -= , *= , /= , %=
+var laptop = 'Apple';
+console.log(laptop);
+// prints => Apple
+// The variable laptop is assigned to Apple 
+let x = 2;
+// =  is assigning 2 to x
+x += 1; 
+console.log(x);
+// prints => 3
+// += is adding 1 to the value stored in x 
+x -= 4; 
+console.log(x);
+// prints => -1 
+// -= is subtracting 4 from the previous value in x
+x *= 3; 
+console.log(x); 
+// prints => -1 
+// *= is multiplying 3 from the previous value in x
+// Arithmetic operators 
+// This is a mathematical operator. 
+// + , - , * , / , % , ++ , --
+var sum = 5 * 5;
+console.log(sum);
+// prints => 25
+// the sum is assigned to five times five 
+// * is an arithmetic operator 
+let sub = 5 - 5;
+console.log(sub);
+// print => 0
+// using the - operator it will subtract five from five
+let div = 5 / 1;
+console.log(div); 
+// print => 5
+// using the / operator it will divide 1 from five
+/* Comparison operators
+// This is a logical operator that will result in difference or equality for values and variables. 
+== equal to (loosely equal)
+=== strictly equal
+!=	not equal	
+!==	not equal value 
+>	greater than	
+<	less than	
+>=	greater than or equal to	
+<=	less than or equal to	
 */
- 
- var x = 8; // the equal sign assigns 8 to x
- // += adds a number to x which is equal to 8
- console.log(x += 1); // ==> returns 9
- // -= susbstracts a number from x which is equal to 9
- console.log(x -= 5); // ==> returns 4
- // *= multiplies x with a number 
- console.log(x *= 20); // returns 80 
- // /= divides x by a number 
- console.log(x /= 5); // returns 16 
- // %= shows if there is a remeinder 
- console.log(x %= 5); // returns 1, there are three 5's in 16, remainder is 1
- 
- 
-// 2. Arithmetic Operators //
- 
-/* 
-* Arithmetic Operators perform simple Arithmetic equations. 
+// strict comparision: using three = 
+// it is a comparision between the value's data types. It will return a boolean value, based on those two camparision
+console.log('2' === 2);
+// Prints => false
+// In this example, it is strictly comparing data types. On the left side, it is a string and on the right side, it is a number. 
+// loose comparision: using two = 
+// Compares if two values are the same, and will return a boolean value.  It does not compare the value's data type. 
+console.log('2' == 2);
+// prints => true
+// It prints true because the values on each side of the loose operator is the same
+// less than: <
+let a = 1;
+let b = 2; 
+console.log(a < b);
+// prints => true
+// This will print out a boolean value of true, because a is less than b. 
+/* Logical operators
+In conditional statements, logical operators are used to compare each condition.
+This operator will result in a boolean values. 
+It will determine the logic behind the condition. 
+&& and 
+|| or 
+! reverses the output of the boolean value 
 */
- 
-var y = 15;
-var z = 10;
- 
- console.log(y + z); // adds 15 plus 10 ==> returns 25
- console.log(y - z); // substracts both variables ==> returns 5
- console.log(y * z); // multiples both variables ==> returns 150
- console.log(y / z); // 15 divided by 10 ==> returns 1.5
- console.log(y % z); // returns 5, one 10 in 15, remainder 5
- console.log(++y); // y plus 1 ==> returns 16
- console.log(--z); // substracts 1 from z ==> returns 9
-// 3. Comparison Operators // 
-/* 
-* Comparison Operators compares two values to return a true or false result.
-* There are many different types of comparison operators like equality,
-* inequality, greater than or less than comparisons. There is equality 
-* which changes the operants type and then makes a comparison and
-* strict equality which has to be completely equal. 
-*/
- 
- 
-// == is equal 
- console.log(1 == 1); // returns true
- console.log(1 == '1'); // convert the operant and returns true
-// === stricly equal 
- console.log(2 === 2); // returns true
- console.log(2 === '2'); // stricly equal doesn't convert it, returns false 
-// != not equal
- console.log(3 != 3); // returns false because they are equal 
- console.log(3 != '3'); // convert the operant and return false
-// !== stricly not equal
- console.log(4 !== 4); // returns false because they are equal
- console.log(4 !== '4'); // returns true because they are not stricly equal
-// > greater than 
- console.log(5 > 3); // returns true because 5 is greater than 3
- console.log(2 > 5); // returns false because 2 is not greater than 5
-// >= greater or equal than
- console.log( 6 >= 6); // returns true because 6 is greater or equal to 6
-// < smaller than
- console.log(10 < 9); // returns false because 10 is greater than 9
- console.log(9 < 10); // returns true because 9 is smaller than 10
-// <= smaller or equal than
- console.log( 3 <= 3); // returns true because 3 is greater or equal to 3
-// 4. Logical Operators //
-/* 
-* This operator returns a true or false depending if the conditions has been 
-* met. There are 3 different kinds: AND(&&), OR(||), NOT(!).
-*/
-// AND(&&)
- function myGrade(test) {
- /* Here is && which says that if test is more or equal than 90 
- AND(&&) less or equal to 100 you get an A */
- if(test >= 90 && test <= 100) { 
- return 'You got an A';
- } else {
- return 'study more';
- }
- }
- console.log(myGrade(95)); // returns 'You got an A'
-// OR(||)
- function myNewCar(car) {
- //You put or, so that means you can pick an Audi or a BMW
- if(car == 'Audi' || car == 'BMW' ) {
- return "Buy it!!";
- } else {
- return "na, don't buy it";
- }
- }
- console.log(myNewCar('BMW')); // returns Buy it!!
- console.log(myNewCar('Audi')); //returns Buy it!!
-// NOT(!)
- function youFailed(grade) {
- /* if grade is not equal to 0 then it will print'well at 
- least you didn't get a zero */
- if(grade != 0) {
- return "well at least you didn't get a zero";
- } else {
- return "jeez...";
- }
- }
- console.log(youFailed(0)); // ==> returns jeez...
-// 5. Unary Operators //
-/* 
-* Most operators are binary with means they need two operators but urany 
-* operator means that it only needs one. We have type of which i will show you
-* the the data type in string form. Then we have the - sign which shows you if a
-* number is negative or -- sign which it will decrease a number by one and then 
-* the + sign that will show you if the number is positive or ++ which will add
-* a one to your number. 
-*/
- var a = 3;
- var b = 8;
- 
- console.log(++a); // y plus 1 ==> returns 4
- console.log(--b); // substracts 1 from z ==> returns 7
- // initialized and assign my string and number
- var myString = 'sesquipedalian';
- var myLuckyNumber = 89348308242;
- console.log(typeof myString); // ==> returns string
- console.log(typeof myLuckyNumber); // returns number
-// 6. Ternary operator // 
-/* 
-* Ternary is the only operator that takes three operands and it test a 
-* conditions and returns one value if it is true and another if it is false. 
-*/
- var earth = false; // earth is false
- // it will test the condition and see if it is true and then if it is false
- console.log((earth) ? "you are from from Earth" : 'you are from Mars!!'); 
- // earth is false so it returns 'you are from Mars!!'
+let year = 2020;
+if (year === 2020 && year > 2019){
+  console.log(true); 
+}
+// prints => true
+// This is true because both of the conditions are met 
+if (year === 2020 || year < 2019){
+  console.log(true); 
+}
+// prints => true
+// This is true because at least one of the conditions are met
+if( 2019 < year && year != 2018){
+   true;
+  }else{false} 
+  // prints => true
+  // It is true because, the boolean output was reversed. It was false, but it became true.
+// Unary operators (!, typeOf, -)
+// typeof will return the variable's data type
+var string = 'This is a string'
+typeof string; 
+// print => string 
+// this will print out string because it is a string data type
+// Logical Not ! 
+// It will change a boolean value and return it to it's opposite value 
+!true 
+// prints => false 
+// this will print false, because on line 69 it uses the reverse of the boolean output 
+// Unary negative
+// It will return a non-number data type to a negative.
+-true
+// prints => -1 
+// because it will print out a negative number
+// turning a positive values into a negavtive value: 
+let positive = 2;
+positive = -positive 
+console.log(positive);
+// prints => -2 
+// the negative sign in front of the variable will make the value become negavtice 
+// Ternary operator (a ? b : c)
+// condtion ? value if true : value if false 
+// It is just like an if, else statement but a shorter way. 
+var f = 5, e = 4, c; 
+c = (f < e) ? f : e;
+// prints => 4
+// the statement is true so it will run the argument before the semicolon

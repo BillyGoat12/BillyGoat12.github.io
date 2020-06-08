@@ -2,74 +2,95 @@
 * 
 ********************************************************************************
 *                             STRING MANIPULATION                              *
-********************************************************************************      
+********************************************************************************
 * 
-* STRING MANIPULATION - Strings are objects that are not stored as characters or arrays, so build
-* in methods and properties have to be used to manipulate their values. 
+* STRING MANIPULATION - Strings can be manupulated with operators and string method.
+* 
 */
  
  
  // 1. With Operators //
  
 /* 
-* The concatenation operation joins two or more string values by using the 
-* + sign or the shorter += sign that can be use as well to concatenate strings.
+* Concatenation is used to join two or more strings and return a new string of the combination.
+*
 */
- // concatenation with + 
  
 // initializing my variables and assigning values
- var lyric1 = 'She';
- var lyric2 = 'was';
- var lyric3 = 'a small';
- var lyric4 = 'town girl';
- // add all the variables with the + sign and spaces with ' '
- var dontStopBelieving = lyric1 + ' ' + lyric2 + ' ' + lyric3 + ' ' + lyric4;
- console.log(dontStopBelieving); // ==> returns she was a small town girl
-// concatenation with +=
- var primus = 'Jeryy was a ';
- // adding text to primus variable with += operator
- primus += 'race car driver';
- console.log(primus); // ==> returns 'Jerry was a race car driver'
+ 
+var string1 = 'Google'; 
+var string2 = 'search engine';
+
+// add all the variables with the + sign and spaces with ' '
+console.log(string1 + ' ' + 'is such a great' + ' ' + string2);
+// prints => Google is such a great search engine
+
+
+// Reassigning using operators:
+// += -= *= /= %/
+
+var car = 'race';
+car += 'car';
+console.log(car); // => racecar
+// the variable car is being reassigned and concated at the same time 
+
 // 2. With string methods //
+
 /*
 * We can use method or properties to manipulate and examine the contexts
 of a strings.
 */
-// a. .Length property 
+// a. Trim method: this method will remove any unnecessary whitespaces before or after a string
+
+var str = "       Welcome!        ";
+
+console.log(str.trim());
+// prints => 'Welcome!'
+
+
+// b. replace method 
+// you can change a specific value, and return a new string at the replacement of that specific value 
+
+var replaceStr = 'I am playing the games!';
+
+replaceStr = replaceStr.replace('playing the games','watching tv');
+
+console.log(replaceStr);
+
+ // print => I am watching tv, playing the games got replaced
+ 
+ // c. .Length property 
+
 /* 
-* It let us know how many characters are in a string.
+* give us the length of the string
 */
- var state = 'California';
- console.log(state.length); // ==> returns 10
-// b. toUpperCase() method 
-/*
-* Turns a string into upper case letters.
-*/
- var peligro = 'danger';
- console.log(peligro.toUpperCase()); // ==> returns 'DANGER'
-// c. toLowerCase() method
-/*
-* Turns a string into lower case letters
-*/
- var mood = "I AM NOT MAD AT YOU";
- console.log(mood.toLowerCase()); // ==> returns 'i am not mad at you'
-// d. Split() method 
-/*
-* Splits a string into an array of sub strings. 
-*/
- var myStringSplit = 'The man who sold the world';
- console.log(myStringSplit.split(' ')); 
- // returns [ 'The', 'man', 'who', 'sold', 'the', 'world' ]
-// e. Slice() method 
-/*
-* It let's you select a part of the string but slicing it. 
-*/
- var mTV = 'Hello my name is Johnny Knoxville';
- // it will slice on the space 17 till the end
- console.log(mTV.slice(17, mTV.length)); // ==> returns 'Johnny Knoxville'
-// f. indexOf method
+
+ var name = 'Billy';
+
+ console.log(name.length); // ==> returns 5
+ 
+ // d. upperCase() or lowerCase()
+// this can change a character in a string from lowercase to uppercase or vice versa
+
+ // example of casing to uppercase
+ let toLowerCase = 'hey';
+ toLowerCase = toLowerCase.toUpperCase();
+ console.log(toLowerCase); // => 'HEY' 
+
+ // all the chars in this string will change to caps
+ 
+ // example to casing to lowercase: 
+ var toUpperCase = "HEY";
+ toUpperCase = toUpperCase.toLowerCase();
+ console.log(toUpperCase); // => 'hey'
+ // all the chars in this string will change to lower case 
+ 
+ // e. indexOf method
+
 /*
 * Method used to find the index the word can be found in the string.
 */
- var pauloCoelho = "A life without cause is a life without effect";
- console.log(pauloCoelho.indexOf("life")); // ==> returns 2
+
+var greeting = "Hi my name is Billy";
+
+console.log(greeting.indexOf("Billy")); // ==> returns 14
