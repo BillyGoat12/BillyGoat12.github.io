@@ -21,7 +21,7 @@ day = 22;           // day now has number value
 /**
 * Undefined - It is primitive data, when variable is declared and * not yet has
 * not yet value assigned, automatically by default,
-* has the value of undefined.  
+* has the value of undefined. Also primitive data types are copied from one value to the next.
 */
 var day; 
 console.log(day);    // prints => undefined
@@ -80,6 +80,13 @@ var boolean1 = false;
 console.log(boolean1); // prints => false
 var isGreater = 7 > 1;
 console.log(isGreater); // prints => true
+
+//copy by reference//
+var x = 1;
+var y = x;// value x is stored in y
+y = 2 // changeing y doesnt affect what is stored in x
+console.log(x)// prints 1
+
 // Complex Data Type //
 /**
 * Object - represents collection of properties, which are
@@ -91,7 +98,8 @@ console.log(isGreater); // prints => true
 * New object can be created by creating object literal, but also
 * can be created by the keyword new. 
 * It is important to know that all objects in JavaScript come
-* form Object type, and we copy objects by reference. 
+* form Object type, and we copy objects by reference. Also 
+* complex datatypes are passed by reference.
 */
 //declare an object literal
 var myObj = {};
@@ -174,3 +182,12 @@ var add = function(n1, n2) {
    return n1 + n2;
 };
 add(2, 2); // prints => 4
+//copy by reference// 
+var test = {
+    name: "Billy"
+}
+
+var example = test;// the value stored in example is a reference to the value stored in a. they both points to the same object
+
+example.name = "Andy"// changing the value in example affect all reference because the value is reference to the same object
+

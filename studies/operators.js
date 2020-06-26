@@ -81,22 +81,31 @@ It will determine the logic behind the condition.
 || or 
 ! reverses the output of the boolean value 
 */
+
 let year = 2020;
 if (year === 2020 && year > 2019){
   console.log(true); 
 }
 // prints => true
 // This is true because both of the conditions are met 
+
+
 if (year === 2020 || year < 2019){
   console.log(true); 
 }
 // prints => true
 // This is true because at least one of the conditions are met
+
+
 if( 2019 < year && year != 2018){
-   true;
-  }else{false} 
+  return true;
+  }else{
+  return false;
+} 
   // prints => true
-  // It is true because, the boolean output was reversed. It was false, but it became true.
+  // It is true because, the boolean output was reversed from the bang operator. It was false, but it became true.
+  
+  
 // Unary operators (!, typeOf, -)
 // typeof will return the variable's data type
 var string = 'This is a string'

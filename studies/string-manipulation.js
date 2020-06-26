@@ -26,11 +26,10 @@ console.log(string1 + ' ' + 'is such a great' + ' ' + string2);
 // prints => Google is such a great search engine
 
 
-// Reassigning using operators:
-// += -= *= /= %/
+// Reassigning using add operators (+, +=):
 
 var car = 'race';
-car += 'car';
+car + 'car';
 console.log(car); // => racecar
 // the variable car is being reassigned and concated at the same time 
 

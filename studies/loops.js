@@ -36,6 +36,21 @@ console.log(i)   // prints => 0, 1, 2, 3
 for( i = 3; i >= 0; i--) {
 console.log(i)  // prints => 3, 2, 1, 0
 }
+
+// you can also use for loops to loop forward and backward through an array//
+let arr = [1,2,3]
+
+// looping forward //
+for(let i = 0; i < arr.length ; i++) { // setting the start condition by the first index and stop condition to the last index and increamenting by 1
+  // you will iterate through the whole array forward
+  console.log(arr[i])// 1 2 3
+}
+// looping backward //
+for(let i = arr.length - 1; i >= 0; i--){// setting the start condition by the last index and stop condition to the first index and decrementing by 1
+  // you will iterate through the whole array backwards
+  console.log(arr[i])// 3 2 1
+}
+
 // 2. For in Loop //
 /*
 For in, loops over properties of an Object. Allows to access each property 

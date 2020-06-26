@@ -113,3 +113,15 @@ function studentMath() {
 studentMath();  // call inner function so it will start its task
 }
 students(); // call outher function so it will start its task
+
+// we can specify the output value of a function with the return keyword followed by a value //
+
+let identity = value => {
+    return value// returns the input unchanged
+}
+
+
+
+
+
+
