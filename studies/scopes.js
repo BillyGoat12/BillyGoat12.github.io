@@ -114,13 +114,13 @@ console.log(test) // => 5                 // Even though in this code there is a
 * There is a variable in the global scope and a parameter with the same name, if you are within the function body which would you access? 
 * If you were in the global scope which would you access? Why?
 */
-    const example = 'Global';      // declaring a variable with "Global"    
+    const example = true;          // declaring a variable with true    
     function testFunc() {          // declaring a testFunc function    
-        const example = 'Local'    // reassigning the test variable to "Local"    
+        const example = false      // reassigning the test variable to false    
         return example             // returning the value of test
     }                           
-    console.log(example)       // => Global    // the variable test is not accesible from the local scope and thus will reach out to the global scope    
-    console.log(testFunc())    // => Local     // within the local scope of the function, the value of test = "Local"    
+    console.log(example)       // => true      // the variable example is not accesible from the local scope and thus will reach out to the global scope    
+    console.log(testFunc())    // => false     // within the local scope of the function, the value of example = false    
     
     
     
